@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>KSK Events Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>KSK College Events Management App</h2>
+
+<div class="box">
+<h3>Add College Event</h3>
+<form method="POST">
+<input name="name" placeholder="Event Name" required>
+<input name="date" placeholder="Event Date" required>
+<input name="venue" placeholder="Venue" required>
+<textarea name="description" placeholder="Event Description"></textarea>
+<button>Add Event</button>
+</form>
+</div>
+
+<div class="box">
+<h3>Upcoming Events</h3>
+{% for e in events %}
+<p><b>{{e[1]}}</b> | {{e[2]}} | {{e[3]}}</p>
+{% endfor %}
+</div>
+
+</body>
+</html>
